@@ -46,7 +46,7 @@
     spring:
         application:
          name: h3-config 
-         #必须和配置文件名称相同，例如git上的配置文件是 h3-config-dev.yml ,此处的                    application-name为h3-config
+         #必须和配置文件名称相同，例如git上的配置文件是 h3-config-dev.yml ,此处的application-name为h3-config
        cloud:
         config:
             uri: http://localhost:8099
