@@ -1,6 +1,6 @@
 #### spring-cloud-config配置中心
 
-##### *环境依赖*
+#### *环境依赖*
 
 * 服务端依赖
  
@@ -17,7 +17,7 @@
         <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
 ```
-##### *服务端配置*
+#### *服务端配置*
 ```
     spring:
         cloud:
@@ -41,7 +41,7 @@
 > * /master/h3-config-dev.yml
 
 
-##### *客户端配置*
+#### *客户端配置*
 ```
     spring:
         application:
@@ -58,7 +58,7 @@
 >1. spring.application.name 必须和需要使用的配置文件的名称一致
 >2. 当前情况下只能配合 actuator 主动刷新实现配置的动态更新
 
-##### *主动刷新配置*
+#### *主动刷新配置*
 需添加新的依赖
 ```
     <dependency>
@@ -76,3 +76,36 @@
                     include: "*"
 ```
 使用  /actuator/refresh 便可刷新配置
+
+#### *使用消息总线自动刷新配置*
+在配置中新服务端和客户端都需要新增依赖和配置
+- 新增依赖
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId></dependency>
+```
+- 新增配置
+```
+    spring:
+        rabbitmq:
+            host: 192.168.10.180
+            port: 5672
+            username: admin
+            password: admin
+            virtual-host: bus
+    management:  
+        endpoint:
+            endpoints:
+                web:
+                    exposure:
+                        include: "*"
+```
+- 手动调用
+修改配置push到respo上时，手动调用服务端的刷新配置URL
+ /actuator/bus-refresh（2.x的版本都统一放到了actuator中，1.x直接调用/bus/refresh）
+- webhook自动刷新
+上述手动调用的方式还是比较麻烦，git仓库提供了webhook自动刷新的功能，把刷新配置的URL配置进来，仓库更新的时候微服务就会自动读取新的配置
+
+#### *整体架构图*
+![d6e4679de49c4f9783ecb72735345efe.jpeg](en-resource://database/1195:1)
