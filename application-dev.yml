@@ -1,5 +1,6 @@
 foo: 222
 redis:
   pattern: standalone
-  host: 192.168.10.131
-  port: 6381
+  host: 192.168.10.180
+  port: 6378
+  password: 123456
