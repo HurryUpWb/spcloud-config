@@ -106,6 +106,5 @@
  /actuator/bus-refresh（2.x的版本都统一放到了actuator中，1.x直接调用/bus/refresh）
 - webhook自动刷新
 上述手动调用的方式还是比较麻烦，git仓库提供了webhook自动刷新的功能，把刷新配置的URL配置进来，仓库更新的时候微服务就会自动读取新的配置
-
 #### *整体架构图*
-![d6e4679de49c4f9783ecb72735345efe.jpeg](en-resource://database/1195:1)
+![image](https://github.com/HurryUpWb/spcloud-config/blob/master/configbus.jpg)
