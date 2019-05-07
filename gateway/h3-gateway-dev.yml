@@ -1,2 +1,44 @@
-name: mqdev
-mq-host: 127.0.0.1
+auth:
+  skipTokenUrls:
+    - /auth/authorization/auth
+    - /auth/authorization/pos_login
+    - /auth/authorization/send_auth_code
+    - /auth/authorization/validate_account
+    - /auth/authorization/validate_authcode
+    - /auth/authorization/reset_password
+    - /connector/executorController/execute                 #执行sql语句
+    - /connector/metaManagerController/executeDDL           #执行ddl
+    - /connector/zkOrchController/addTableRuleConfiguration #添加分片
+    - /connector/zkOrchController/showSql/true              #sharding打印语句
+    - /connector/zkOrchController/getZkShardingConfig       #拉取zk分片信息
+  skipAuthUrls:
+    - /auth/authorization/auth
+    - /auth/authorization/pos_login
+    - /auth/authorization/send_auth_code
+    - /auth/authorization/validate_account
+    - /auth/authorization/validate_authcode
+    - /auth/authorization/reset_password
+    - /auth/authorization/bind_phone
+    - /auth/authorization/user_detail
+    - /auth/authorization/validate_password
+    - /auth/authorization/mod_password
+    - /auth/authorization/user_compamys
+    - /auth/authorization/change_company
+    - /auth/authorization/validate_employee_company
+    - /auth/authorization/user_groups
+    - /connector/executorController/execute
+    - /connector/metaManagerController/executeDDL
+    - /connector/zkOrchController/addTableRuleConfiguration
+    - /connector/zkOrchController/showSql/true
+    - /connector/zkOrchController/getZkShardingConfig
+    - /orgmanager/sysuserfunc/getUserFuncList           #获取用户模块
+    - /orgmanager/sysuserfunc/getFuncListByParent       #根据父模块加载子模块
+    - /orgmanager/sysuserfunc/user_function_info        #侧边栏渲染页面按钮
+    - /connector/entity/list
+    - /connector/entity/list/record
+    - /connector/entity/list/add/param
+    - /connector/entity/list/del/param
+    - /connector/entity/list/record
+    - /connector/entity/list/column/mod
+    - /connector/entity/list/column
+    - /connector/entity/set/*
