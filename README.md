@@ -27,6 +27,7 @@
                     uri: https://github.com/HurryUpWb/spcloud-config
                     username: username 
                     password: password
+                    search-paths: gateway    #指定搜索当前respo下的文件夹
 ```
 此时如果配置没有问题则，配置中心服务端已经搭建完成，可以尝试访问github上的配置文件，访问规则是由spring-cloud-config预定义
 > * /{application}/{profile}[/{label}]
