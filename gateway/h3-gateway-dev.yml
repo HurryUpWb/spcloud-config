@@ -1,3 +1,4 @@
+name: wb
 auth:
   skipTokenUrls:
     - /auth/authorization/auth
