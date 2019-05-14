@@ -1,3 +1,4 @@
+name: zzz
 auth:
   skipTokenUrls:
     - /auth/authorization/auth
