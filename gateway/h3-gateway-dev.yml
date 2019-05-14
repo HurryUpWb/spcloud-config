@@ -1,4 +1,4 @@
-name: wb
+name: zx
 auth:
   skipTokenUrls:
     - /auth/authorization/auth
