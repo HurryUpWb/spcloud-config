@@ -2,7 +2,7 @@ eureka:
   client:
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://localhost:8083/eureka/,http://192.168.10.131:8083/eureka/
+		defaultZone: http://localhost:8083/eureka/
 spring:
    rabbitmq:
     host: 192.168.10.60
@@ -17,3 +17,5 @@ management:
     web:
       exposure:
         include: "*"
+      
+
