@@ -1,3 +1,7 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka/
 redis:
   pattern: standalone
   host: 192.168.10.180
