@@ -117,15 +117,15 @@
 #### *将配置放到git私服*
 
 >1. 先定义出一个配置仓库
-    ``` git init --bare```
+     git init --bare
 >2. 本地克隆这个仓库
-    ```git clone git@192.168.10.60:/home/git/spcloud-config```
+     git clone git@192.168.10.60:/home/git/spcloud-config
 >3. 将所有文件添加到本地仓库里
-    ``` git add .```
+     git add .
 >4. 提交
-   ``` git commit -m '提交的信息' ```
+     git commit -m '提交的信息' 
 >5. push到远程仓库
-    ``` git push ```
+     git push
 
 注意点：
 * 提交时权限问题
@@ -135,3 +135,15 @@
 
 * spring.cloud.config.server.git.uri 私服写法
     >git@192.168.10.60:/home/git/spcloud-config
+
+
+#### *git私服配置hooks*
+由于需要自动刷新配置，借助git的hook机制，在更新了配置push到远程仓库后自动请求上述‘/bus/refresh’接口实现配置的自动刷新
+
+* 在远程仓库下找到 hooks 文件夹
+* 新增名为 post-receive的hook，必须是可运行的脚本文件支持多种格式
+ ```  
+    #!/bin/bash
+    curl -X POST -i "http://192.168.10.174:8099/actuator/bus-refresh"
+ ```
+ * 更新配置push到仓库时会自动请求这个链接实现刷新
