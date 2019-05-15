@@ -110,7 +110,7 @@
 把刷新配置的URL配置进来，仓库更新的时候微服务就会自动读取新的配置
 
 #### *整体架构图*
-![d6e4679de49c4f9783ecb72735345efe.jpeg](en-resource://database/539:1)
+![imgage](https://github.com/HurryUpWb/spcloud-config/blob/master/configbus.jpg)
 
 
 #### *将配置放到git私服*
