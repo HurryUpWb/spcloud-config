@@ -106,7 +106,8 @@
 修改配置push到respo上时，手动调用服务端的刷新配置URL
  /actuator/bus-refresh（2.x的版本都统一放到了actuator中，1.x直接调用/bus/refresh）
 - webhook自动刷新
-上述手动调用的方式还是比较麻烦，git仓库提供了webhook自动刷新的功能，github上的配置地方如图![939274c69c825efeaf26d86770337b54.png](en-resource://database/538:1)
+上述手动调用的方式还是比较麻烦，git仓库提供了webhook自动刷新的功能，github上的配置地方如图
+![imgage](https://github.com/HurryUpWb/spcloud-config/blob/master/hook-setiing.png)
 把刷新配置的URL配置进来，仓库更新的时候微服务就会自动读取新的配置
 
 #### *整体架构图*
