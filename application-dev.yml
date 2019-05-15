@@ -11,10 +11,3 @@ spring:
     password: 123456
     virtual-host: bus
 
-management:
-  endpoint:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
